@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charsets="UTF-8">
+		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Gerard Rodriguez</title>
 		<link rel="stylesheet" href="MyPortfolio/css/styles.css">	
-		<script src="MyPortfolio/js/work-projects.js"></script>	
+		<script defer src="MyPortfolio/js/work-projects.js"></script>	
 	</head>
 <body>
 	<header>
@@ -152,15 +152,14 @@
 					<img src="MyPortfolio/imgs/cert-frontend-begginer.png" alt="QCU Logo" onclick="viewImgCert(this);">
 					<img src="MyPortfolio/imgs/cert-intermediate-c.png" alt="QCU Logo" onclick="viewImgCert(this);">
 				</div>
-				<div id="img-modal" class="image-modal">
+				<div onclick="closeBttn()" id="img-modal" class="image-modal">
 					<div class="modal-content">
-						<div class="modal-header">
+						<div onclick="closeBttn()" class="modal-header">
 							<span class="close-modal">&times;</span>
 						</div>
 						<img id="selectedImage">
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</main>
