@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
+		<meta charsets="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Gerard Rodriguez</title>
 		<link rel="stylesheet" href="MyPortfolio/css/styles.css">	
 		<script defer src="MyPortfolio/js/work-projects.js"></script>	
+		<script defer src="MyPortfolio/js/the-matrix-effects.js"></script>	
 	</head>
 <body>
 	<header>
-		<div>
-			<p>Profile</p>
-			<p>Experience</p>
-			<p>Skills</p>
-			<p>Education</p>
-			<p>Certificates</p>
-			<p>Projects</p>
-		</div>
+		<nav>
+			<ul>
+				<li id="prof-nav">
+					<a href="#profile">
+						<figure class="profile-nav">
+							<img = src="imgs/ako.png" />
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="#experience">Experience</a>
+				</li>
+				<li>
+					<a href="#certificates">Certificates</a>
+				</li>
+				<li>
+					<a href="#education">Education</a>
+				</li>
+				<li>
+					<a href="#skills">Skills</a>
+				</li>
+				<li>
+					<a href="#projects">Projects</a>
+				</li>
+			<ul>
+		</nav>
 	</header>
 	<main>
-		<div class="profile">
-			<div class="left-profile">
-				<h1>Hello World! I'am,</h1>
-				<div>
-					<h2>Gerard Rodriguez</h2>
-					<h3>Jr. Web Developer</h3>
+		<article  class="matrix-container" >
+			<article class="scanlines">
+			</article>	
+		</article>	
+		<article  id="profile" >
+				<div class="left-profile ">
+					<h1>Hello World! I'am,</h1>
+					<div>
+						<h2>Gerard Rodriguez</h2>
+						<h3>Jr. Web Developer</h3>
+					</div>
 				</div>
-			</div>
-			<div class="right-profile">
-				<img src="MyPortfolio/imgs/ako.png">
-			</div>
-		</div>	
+				<div class="right-profile">
+					<img src="MyPortfolio/imgs/ako.png">
+				</div>
+		</article>	
 
-		<div class="experience">
+		<article id="experience">
 			<div class="experience-header">
 				<h2>Professional Experence</h2>
 				<h3>Jr. Bubble.io Developer</h3>
@@ -83,8 +106,8 @@
 					</li>
 				</ul>
 			</div>
-		</div>
-		<div  class="skills">
+		</article>
+		<article  id="skills">
 			<div class="skills-header">
 				<h2>Tech Skills</h2>
 			</div>
@@ -129,8 +152,8 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-		<div  class="education">
+		</article>
+		<article  id="education">
 			<div  class="education-header">
 				<h2>Education</h2>
 				<h3>Bachelors of Science in Information Technology</h3>
@@ -138,8 +161,8 @@
 			<div  class="education-content">
 				<img src="MyPortfolio/imgs/qcu_logo.jpg" alt="QCU Logo">
 			</div>
-		</div>
-		<div  class="certificates">
+		</article>
+		<article  id="certificates">
 			<div  class="certificate-header">
 				<h2>Certification</h2>
 				<h3>Online Free Certifications</h3>
@@ -161,7 +184,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</article>
 	</main>
 	<footer>
 	</footer>
