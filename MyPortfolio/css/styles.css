@@ -8,7 +8,8 @@ body {
 	display: inline-flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	overflow-x: hidden;
+    overflow-x: hidden;
+	
 }
 
 h1 {
@@ -44,29 +45,51 @@ header {
 	display: flex;
 	flex-direction: row-reverse;
 	column-gap: 10px;
-	padding: 0 20px;
+	padding: 0;
 	position: fixed;
 	right: 0;
-}
-header div {
 	width: fit-content;
-	padding: 10px 10px;
+	z-index: 1;
 }
-header div p{
+
+header nav {
+	width: fit-content;
+	padding: 0;
+}
+
+header nav ul li{
 	background-color: #11823b;
-	color: #fff;
 	padding: 2px 10px;
-	border-radius: 20px;
-	width: fit-content;
-	display: inline-block;
 	margin: 3px;
 	box-shadow: 0 2px 8px 0 #afaeae;
+	width: fit-content;
+	border-radius: 20px;
+	display: inline-block;
 	float: right;
+	box-shadow: none;
+	color: #fff;
 }
-header div p:hover {
+
+#prof-nav{
+	background: none;
+}
+
+#prof-nav:hover {
+	animation-name: none;
+	opacity: 50%;
+}
+
+header nav ul li:hover {
 	animation-name: bg-hover;
 	animation-duration: .75s;
 }
+
+header nav ul li a{
+	background: none;
+	text-decoration: none;
+	color: #fff;
+}
+
 
 @keyframes bg-hover {
 	0 {background-color: #11823b; color: #fff;
@@ -75,6 +98,19 @@ header div p:hover {
 		padding: 4px 14px;}
 	100% {background-color: #11823b; color: #fff;
 		padding: 2px 10px;}
+}
+
+.profile-nav {
+	padding: 0;
+	margin: 0;	
+	
+	img {
+		width: 40px;
+		height: 40px;
+		border-radius:  20px;
+		padding: 0;
+		margin: 0;
+	}
 }
 
 					/* End of header */
@@ -89,19 +125,18 @@ main {
 	min-width: fit-content;
 	display: flex;
 	flex-wrap: wrap;
-	flex-direction: column;
-	align-items: center;
+	flex-direction: column;	
 		
 		/* Start of main profile */
 		
-	.profile {
-		hight: fit-content;
+	#profile {
 		min-height: 820px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		width: 100%;
 		align-items: center;
+		z-index: 0;
 		
 		.left-profile {
 			min-width: 240px;
@@ -147,7 +182,7 @@ main {
 		}
 	}
 	@media screen and (max-width: 980px) {
-		.profile {   
+		#profile {   
 			flex-direction: column;
 		
 			.left-profile {
@@ -160,7 +195,7 @@ main {
 					
 					/* Start of main experience */
 					
-	.experience {
+	#experience {
 		min-height: 820px;
 		min-width: 320px;
 		text-align: center;
@@ -282,7 +317,7 @@ main {
 							
 					/* Start of main Tech Skills */
 
-	.skills {
+	#skills {
 		margin-top: 50px;
 		padding: 50px;
 		display: flex;
@@ -355,7 +390,7 @@ main {
 						
 						/* Start of mvp main Education */
 						
-	.education {
+	#education {
 		color: #fff;
 		display: flex;
 		flex-direction: column;
@@ -397,7 +432,7 @@ main {
 						
 						/* Start of main Certificates */
 						
-	.certificates{
+	#certificates{
 		text-align: center;
 		min-height: 820px;
 		
@@ -480,3 +515,68 @@ main {
 	}						
 }
 						/* End of mvp Main */
+
+						
+						/* The Matrix effects */
+.matrix-container {
+    position: relative;
+	z-index: -1;
+}
+.matrix-column {
+    position: absolute;
+    top: 0;
+    color: #0f0;
+    font-family: 'Courier New', monospace;
+    font-size: 15px;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    white-space: nowrap;
+    animation: fall linear infinite;
+    text-shadow: 0 5px 5px #0f0;
+    width: auto;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+        
+    }
+    50% {
+        opacity: 100%;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Fade-out gradient overlay */
+
+.matrix-column::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 90%;
+    height: 30%;
+    background: linear-gradient(to bottom, transparent 0%, black 100%);
+    pointer-events: none;
+}
+
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 255, 0, 0.1) 0%,
+        rgba(0, 255, 0, 0.1) 3%,
+        transparent 3%,
+        transparent 97%,
+        rgba(0, 255, 0, 0.1) 97%,
+        rgba(0, 255, 0, 0.1) 100%
+    );
+    background-size: 90% 0;
+}
